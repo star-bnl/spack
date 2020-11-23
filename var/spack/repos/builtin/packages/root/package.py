@@ -183,6 +183,13 @@ class Root(CMakePackage):
     depends_on('cmake@3.9:', type='build', when='@6.18.00:')
     depends_on('pkgconfig', type='build')
 
+    depends_on('llvm@:7.1.0', when='%gcc@:4.8.5')
+    depends_on('doxygen@:1.8.16', when='%gcc@:4.8.5')
+    depends_on('hwloc@:1.11.11', when='%gcc@:4.8.5')
+    depends_on('mysql@:5.7.27', when='%gcc@:4.8.5')
+    depends_on('openblas@:0.3.10', when='%gcc@:4.8.5')
+    depends_on('cmake@:3.18.4', when='%gcc@:4.8.5')
+
     depends_on('blas')
     depends_on('freetype')
     depends_on('jpeg')
