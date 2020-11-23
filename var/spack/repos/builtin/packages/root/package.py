@@ -136,7 +136,9 @@ class Root(CMakePackage):
             description='Enable R ROOT bindings')
     variant('rpath', default=True,
             description='Enable RPATH')
-    variant('rootfit', default=True,
+    variant('rfio', default=False,
+            description='Enable support for RFIO (Remote File IO) for CASTOR')
+    variant('roofit', default=True,
             description='Build the libRooFit advanced fitting package')
     variant('root7', default=False,
             description='Enable ROOT 7 support')
@@ -160,6 +162,8 @@ class Root(CMakePackage):
             description='Enable Vc for adding new types for SIMD programming')
     variant('vdt', default=True,
             description='Enable set of fast and vectorisable math functions')
+    variant('veccore', default=False,
+            description='Enable support for VecCore SIMD abstraction library')
     variant('vmc', default=False,
             description='Enable the Virtual Monte Carlo interface')
     variant('x', default=True,
@@ -394,8 +398,8 @@ class Root(CMakePackage):
             define_from_variant('qt', 'qt4'),  # See conflicts
             define_from_variant('qtgsi', 'qt4'),  # See conflicts
             define_from_variant('r'),
-            define('rfio', False),
-            define('roofit', False),
+            define_from_variant('rfio'),
+            define_from_variant('roofit'),
             define_from_variant('root7'),  # See conflicts
             define('ruby', False),
             define('sapdb', False),
@@ -410,7 +414,7 @@ class Root(CMakePackage):
             define_from_variant('unuran'),
             define_from_variant('vc'),
             define_from_variant('vdt'),
-            define('veccore', False),
+            define_from_variant('veccore'),
             define_from_variant('vmc'),
             define_from_variant('webui', 'root7'),  # requires root7
             define_from_variant('x11', 'x'),
