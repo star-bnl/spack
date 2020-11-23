@@ -21,6 +21,8 @@ class Mesa(MesonPackage):
     version('master', tag='master')
     version('20.2.1', sha256='d1a46d9a3f291bc0e0374600bdcb59844fa3eafaa50398e472a36fc65fd0244a')
 
+    patch('builtin_signbit.patch', level=0, when='%gcc@4.8.5')
+
     depends_on('meson@0.52:', type='build')
 
     depends_on('pkgconfig', type='build')
