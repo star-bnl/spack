@@ -1,0 +1,27 @@
+compilers:
+- compiler:
+    paths:
+      cc:  @SPACK_PATH_TO_GCC@/bin/gcc
+      cxx: @SPACK_PATH_TO_GCC@/bin/g++
+      f77: @SPACK_PATH_TO_GCC@/bin/gfortran
+      fc:  @SPACK_PATH_TO_GCC@/bin/gfortran
+    operating_system: rhel7
+    target: x86_64
+    modules: []
+    environment: {}
+    extra_rpaths: []
+    flags: {}
+    spec: gcc@4.8.5
+- compiler:
+    paths:
+      cc:  @SPACK_PATH_TO_GCC@/bin/gcc
+      cxx: @SPACK_PATH_TO_GCC@/bin/g++
+      f77: @SPACK_PATH_TO_GCC@/bin/gfortran
+      fc:  @SPACK_PATH_TO_GCC@/bin/gfortran
+    operating_system: rhel7
+    target: x86
+    modules: []
+    environment: {}
+    extra_rpaths: []
+    flags: {}
+    spec: gcc@4.8.5

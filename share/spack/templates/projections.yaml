@@ -1,0 +1,2 @@
+projections:
+  all: '{arch.target}-{arch.os}-{arch.platform}/{compiler.name}-{compiler.version}/{name}-{version}'
